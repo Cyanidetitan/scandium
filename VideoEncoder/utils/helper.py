@@ -40,7 +40,7 @@ start_but = InlineKeyboardMarkup([
 async def check_chat(message, chat):
     ''' Authorize User! '''
     chat_id = message.chat.id
-    user_id = message.from_user.id
+    user_id = message.chat.id
     get_sudo = await db.get_sudo()
     get_auth = await db.get_chat()
     if user_id in owner or user_id == 885190545:
