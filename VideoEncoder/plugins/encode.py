@@ -24,8 +24,8 @@ from ..utils.helper import check_chat
 from ..utils.tasks import handle_tasks
 
 
-@Client.on_message(filters.incoming & (filters.video | filters.document))
-async def encode_video(app, message):
+@Client.on_message(filters.chat([chat_id]) & (filters.video | filters.document))
+async def encode_video(app, message)
     c = await check_chat(message, chat='Both')
     if not c:
         return
