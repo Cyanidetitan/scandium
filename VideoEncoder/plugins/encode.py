@@ -22,10 +22,10 @@ from .. import data, video_mimetype
 from ..utils.database.add_user import AddUserToDatabase
 from ..utils.helper import check_chat
 from ..utils.tasks import handle_tasks
-
+chat_id = -1001855239636
 
 @Client.on_message(filters.chat([chat_id]) & (filters.video | filters.document))
-async def encode_video(app, message)
+async def encode_video(app, message):
     c = await check_chat(message, chat='Both')
     if not c:
         return
